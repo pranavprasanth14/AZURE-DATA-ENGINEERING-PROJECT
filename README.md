@@ -15,6 +15,10 @@ This repository is part of a **full-stack Azure Data Engineering project**, comb
 - **Databricks (SCD1/SCD2, Medallion Architecture)** → [ADB_REPO](https://github.com/pranavprasanth14/ADB_REPO)
 
 ---
+## Architecture Workflow
+
+![Azure Data Engineering Workflow](flowchart_diagram_visual_representation.png)
+
 
 ## 🚀 Project Overview
 
