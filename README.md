@@ -36,6 +36,9 @@ This repository is part of a **full-stack Azure Data Engineering project**, comb
 ## Architecture Workflow
 
 
+## Architecture Workflow
+
+```
 flowchart TD
     A[Source Data] -->|Ingest| B[Azure Data Factory (ADF)]
     B -->|Pre‑processed Data| C[Databricks (Bronze Layer)]
@@ -46,6 +49,7 @@ flowchart TD
         D -->|SCD1: Overwrite existing records| D
         D -->|SCD2: Track historical changes| D
     end
+```
 
 
 
