@@ -29,9 +29,26 @@ This repository is part of a **full-stack Azure Data Engineering project**, comb
 
 - Bronze Layer: Ingest pre-processed data from ADF outputs  
 - Silver Layer: Apply SCD1 & SCD2 logic for historical tracking and updates  
-- Gold Layer: Produce analytics-ready datasets for reporting/BI  
+- Gold Layer: Produce analytics-ready datasets for reporting/BI
 
----
+
+
+## Architecture Workflow
+
+
+flowchart TD
+    A[Source Data] -->|Ingest| B[Azure Data Factory (ADF)]
+    B -->|Pre‑processed Data| C[Databricks (Bronze Layer)]
+    C --> D[Databricks (Silver Layer)]
+    D --> E[Databricks (Gold Layer)]
+    
+    subgraph SCD Logic
+        D -->|SCD1: Overwrite existing records| D
+        D -->|SCD2: Track historical changes| D
+    end
+
+
+
 
 ## 📌 How to Use
 
