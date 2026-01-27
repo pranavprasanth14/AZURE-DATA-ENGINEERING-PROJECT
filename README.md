@@ -5,6 +5,7 @@
 ![Azure Data Engineering Workflow](flowchart_diagram_visual_representation.png)
 
 
+
 📌 Overview
 
 This repository is part of a full-stack Azure Data Engineering project demonstrating end-to-end data ingestion, transformation, and observability using modern Azure services.
@@ -16,6 +17,8 @@ Azure Data Factory (ADF) for ingestion, orchestration, and monitoring
 Azure Databricks for scalable transformations using Medallion Architecture (Bronze → Silver → Gold)
 
 Centralized logging & diagnostics for enterprise-grade observability
+
+
 
 🏗️ Architecture Workflow
 Azure Data Engineering Workflow
@@ -43,6 +46,8 @@ SCD Type 1 – Overwrites existing records
 
 SCD Type 2 – Tracks historical changes with versioning
 
+
+
 📁 Repository Links
 
 This project is intentionally modular, mirroring real-world enterprise data platforms.
@@ -61,6 +66,8 @@ SCD1 & SCD2 transformations using Medallion Architecture
 
 Centralized error handling, execution logging, and diagnostics
 👉 https://github.com/pranavprasanth14/AZURE-LOG-MECHANISM
+
+
 
 🚀 Project Overview
 Step 1: Azure Data Factory (ADF)
@@ -107,8 +114,12 @@ Transformation logic
 
 Operational observability
 
+
+
 👉 Full implementation:
 https://github.com/pranavprasanth14/AZURE-LOG-MECHANISM
+
+
 
 📌 How to Use
 1️⃣ Clone and Run ADF Pipelines
@@ -139,6 +150,8 @@ Import logging pipeline from AZURE-LOG-MECHANISM
 
 Monitor executions via SQL logs and diagnostics
 
+
+
 🛠️ Technologies Used
 
 Azure Data Factory
@@ -155,7 +168,9 @@ Medallion Architecture
 
 Slowly Changing Dimensions (SCD1 & SCD2)
 
-🎯 Key Highlights (Interview-Ready)
+
+
+🎯 Key Highlights 
 
 Modular, enterprise-style project design
 
@@ -167,10 +182,14 @@ Clear separation of ingestion, transformation, and observability
 
 Designed with scalability and monitoring in mind
 
+
+
 👤 Author
 
 Pranav Prasanth
 Azure Data Engineer | Azure Data Factory | Databricks
+
+
 
 🏷️ Tags
 
