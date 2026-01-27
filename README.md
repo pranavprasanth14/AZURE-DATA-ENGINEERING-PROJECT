@@ -4,73 +4,175 @@
 
 ![Azure Data Engineering Workflow](flowchart_diagram_visual_representation.png)
 
-This repository is part of a **full-stack Azure Data Engineering project**, combining:
 
-1. **Azure Data Factory (ADF) pipelines** – ingest, orchestrate, and pre-process source data  
-2. **Azure Databricks notebooks** – perform **SCD1 & SCD2 transformations** on a **Medallion Architecture (Bronze → Silver → Gold)**
+📌 Overview
 
-> The workflow starts with **ADF pipelines**, followed by **Databricks transformations**.
+This repository is part of a full-stack Azure Data Engineering project demonstrating end-to-end data ingestion, transformation, and observability using modern Azure services.
 
----
+The solution combines:
 
-## 📁 Repository Links
+Azure Data Factory (ADF) for ingestion, orchestration, and monitoring
 
-- **ADF pipelines (ETL orchestration, linked services, triggers)** → This repository: [ADF_REPO](https://github.com/pranavprasanth14/ADF_REPO)  
-- **Databricks (SCD1/SCD2, Medallion Architecture)** → [ADB_REPO](https://github.com/pranavprasanth14/ADB_REPO)
+Azure Databricks for scalable transformations using Medallion Architecture (Bronze → Silver → Gold)
 
----
+Centralized logging & diagnostics for enterprise-grade observability
 
-## 🚀 Project Overview
+🏗️ Architecture Workflow
+Azure Data Engineering Workflow
 
-**ADF pipelines (Step 1):**  
+The workflow begins with ADF pipelines, followed by Databricks transformations, and is supported by a centralized logging and diagnostic framework.
 
-- Ingest data from various sources  
-- Perform preliminary transformations  
-- Store curated datasets in landing / staging zones  
-- Schedule pipelines using triggers  
+Source Systems
+      │
+      ▼
+Azure Data Factory (ADF)
+  (Ingestion + Logging)
+      │
+      ▼
+Databricks Bronze Layer
+      │
+      ▼
+Databricks Silver Layer (SCD1 / SCD2)
+      │
+      ▼
+Databricks Gold Layer (Reporting / BI)
 
-**Databricks notebooks (Step 2):**  
+SCD Logic
 
-- Bronze Layer: Ingest pre-processed data from ADF outputs  
-- Silver Layer: Apply SCD1 & SCD2 logic for historical tracking and updates  
-- Gold Layer: Produce analytics-ready datasets for reporting/BI
+SCD Type 1 – Overwrites existing records
+
+SCD Type 2 – Tracks historical changes with versioning
+
+📁 Repository Links
+
+This project is intentionally modular, mirroring real-world enterprise data platforms.
+
+🔹 Azure Data Factory (ADF)
+
+ETL orchestration, ingestion pipelines, datasets, linked services, and triggers
+👉 https://github.com/pranavprasanth14/ADF_REPO
+
+🔹 Azure Databricks
+
+SCD1 & SCD2 transformations using Medallion Architecture
+👉 https://github.com/pranavprasanth14/ADB_REPO
+
+🔹 ADF Logging & Diagnostic Framework
+
+Centralized error handling, execution logging, and diagnostics
+👉 https://github.com/pranavprasanth14/AZURE-LOG-MECHANISM
+
+🚀 Project Overview
+Step 1: Azure Data Factory (ADF)
+
+Ingest data from multiple source systems
+
+Perform preliminary transformations and validations
+
+Store curated datasets in landing / staging zones
+
+Orchestrate workflows using triggers and dependencies
+
+Log execution metadata, success, and failures centrally
+
+Step 2: Azure Databricks
+
+Bronze Layer: Ingest pre-processed data from ADF outputs
+
+Silver Layer: Apply SCD1 & SCD2 logic for historical tracking
+
+Gold Layer: Produce analytics-ready datasets for BI and reporting
+
+🛡️ ADF Logging & Observability
+
+To ensure production-grade monitoring, this project integrates a dedicated ADF logging and diagnostics framework implemented as a standalone module.
+
+Key Capabilities
+
+SQL-based execution logging
+
+Job start, success, and failure tracking
+
+Detailed error diagnostics using ADF system variables
+
+Pipeline and activity-level observability
+
+No pipeline execution ends without a log entry
+
+This design cleanly separates:
+
+Data processing logic
+
+Transformation logic
+
+Operational observability
+
+👉 Full implementation:
+https://github.com/pranavprasanth14/AZURE-LOG-MECHANISM
+
+📌 How to Use
+1️⃣ Clone and Run ADF Pipelines
+git clone https://github.com/pranavprasanth14/ADF_REPO.git
 
 
+Deploy pipelines in Azure Data Factory
 
-## Architecture Workflow
+Configure linked services and datasets
 
+Trigger pipelines manually or via schedule
 
-## Architecture Workflow
-
-```
-flowchart TD
-    A[Source Data] -->|Ingest| B[Azure Data Factory (ADF)]
-    B -->|Pre‑processed Data| C[Databricks (Bronze Layer)]
-    C --> D[Databricks (Silver Layer)]
-    D --> E[Databricks (Gold Layer)]
-    
-    subgraph SCD Logic
-        D -->|SCD1: Overwrite existing records| D
-        D -->|SCD2: Track historical changes| D
-    end
-```
+2️⃣ Run Databricks Transformations
+git clone https://github.com/pranavprasanth14/ADB_REPO.git
 
 
+Execute Bronze → Silver → Gold notebooks
 
+Apply SCD1 & SCD2 transformations
 
-## 📌 How to Use
+Generate analytics-ready tables
 
-1. Clone this repo (ADF pipelines) and explore datasets, pipelines, and triggers:  
-   git clone https://github.com/pranavprasanth14/ADF_REPO.git
-2. After running ADF pipelines, clone the Databricks repo to perform SCD transformations:
-   git clone https://github.com/pranavprasanth14/ADB_REPO.git
+3️⃣ Enable Logging & Diagnostics
 
+Deploy SQL logging tables and stored procedures
 
+Import logging pipeline from AZURE-LOG-MECHANISM
 
+Monitor executions via SQL logs and diagnostics
 
+🛠️ Technologies Used
 
-💡 Author
+Azure Data Factory
 
-Pranav Prasanth – Azure Data Engineering & Databricks enthusiast
+Azure Databricks
 
-#AzureDataFactory #AzureDatabricks #SCD1 #SCD2 #MedallionArchitecture #DataEngineering
+Apache Spark
+
+Delta Lake
+
+Azure SQL Database
+
+Medallion Architecture
+
+Slowly Changing Dimensions (SCD1 & SCD2)
+
+🎯 Key Highlights (Interview-Ready)
+
+Modular, enterprise-style project design
+
+Production-grade ADF logging and diagnostics
+
+Real-world SCD implementation using Databricks
+
+Clear separation of ingestion, transformation, and observability
+
+Designed with scalability and monitoring in mind
+
+👤 Author
+
+Pranav Prasanth
+Azure Data Engineer | Azure Data Factory | Databricks
+
+🏷️ Tags
+
+#AzureDataFactory #AzureDatabricks #DataEngineering
+#SCD1 #SCD2 #MedallionArchitecture #ADFLogging
